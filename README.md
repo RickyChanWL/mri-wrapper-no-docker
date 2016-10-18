@@ -13,7 +13,8 @@ change the root directory variables as your actual root directories for Caffe, c
 2. Prepare the same data files and model files as same as [mri-wrapper](https://github.com/gifford-lab/mri-wrapper)
 3. Put data files in wd/data and model files in wd/model
 4. In train.txt, test.txt, valid.txt, the path should be absolute path of the data files
-5. Run the mriwrapper, you should keep the invisible window opened, otherwise, the process will be terminated
+5. place runparam_docker.list in wd/model
+6. Run mriwrapper, you should keep the invisible window opened, otherwise, the process will be terminated
 ```
-./mriwrapper.py example 0 #mriwrapper $wd $GPUNUM
+./mriwrapper.py example 0 #./mriwrapper.py $wd $GPUNUM
 ```
