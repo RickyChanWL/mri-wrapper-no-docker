@@ -6,6 +6,9 @@ from os.path import dirname,exists,join,realpath
 from os import system,makedirs,chdir,getcwd,makedirs
 
 def mriwrapper(folder,gpunum):
+    mri_ROOT = '/uac/gds/wlchan/mydrive/Mri-app' #set the path for Mri-app !!!!!!!!!!!
+    CAFFECNN_ROOT = '/uac/gds/wlchan/mydrive/caffe-cnn' #set the path for caffe-cnn !!!!!!!!!!
+    CAFFE_ROOT = '/uac/gds/wlchan/mydrive/caffecudnn' #set the path for caffe !!!!!!!!!!!!
     library_dir = dirname(realpath(__file__))
     folder_dir = realpath(folder)
 
@@ -20,10 +23,9 @@ def mriwrapper(folder,gpunum):
         runparams.update({line[0]:line[1]})
         print line[0] +' : '+str(line[1])
     order = runparams['ORDER']
-    CAFFE_ROOT = '/uac/gds/wlchan/mydrive/caffecudnn' #set the path for caffe !!!!!!!!!!!!
+
     mri_maxiter = int(runparams['MRI_MAXITER'])
-    mri_ROOT = '/uac/gds/wlchan/mydrive/Mri-app' #set the path for Mri-app !!!!!!!!!!!
-    CAFFECNN_ROOT = '/uac/gds/wlchan/mydrive/caffe-cnn' #set the path for caffe-cnn !!!!!!!!!!
+
     runparams['TRAINVAL'] = folder_dir+'/model/trainval.prototxt' #set path for trainval !!!!!!!!!!!!
     runparams['SOLVER'] = folder_dir+'/model/solver.prototxt' #set path for solver !!!!!!!!!!!!!
     runparams['DEPLOY'] = folder_dir+'/model/deploy.prototxt' #set path for deploy !!!!!!!!!!!
