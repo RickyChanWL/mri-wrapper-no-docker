@@ -15,5 +15,5 @@ change the root directory variables as your actual root directories for Caffe, c
 4. In train.txt, test.txt, valid.txt, the path should be absolute path of the data files
 5. Run the mriwrapper, you should keep the invisible window opened, otherwise, the process will be terminated
 ```
-mriwrapper example 0 #mriwrapper $wd $GPUNUM
+./mriwrapper.py example 0 #mriwrapper $wd $GPUNUM
 ```
